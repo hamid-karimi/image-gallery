@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import { Fragment } from 'react';
 import './App.css';
+import Gallery from './components/gallery/Gallery'
+import Header from './Header'
+import getData from './data'
 
-function App() {
+
+const App = () => {
+  let images = getData();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Header />
+      <div className="gallery">
+        <Gallery imgarr={images} />
+      </div>
+    </Fragment>
   );
 }
 
